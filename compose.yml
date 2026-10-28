@@ -1,7 +1,7 @@
 ---
 services:
   db:
-    image: sajidshaikktm/lib:dbimage
+    image: sajidshaikktm/library:dbimage
     deploy:
       replicas: 1
     ports:
@@ -10,7 +10,7 @@ services:
       - mynetwork
 
   auth_service:
-    image: sajidshaikktm/lib:authimage
+    image: sajidshaikktm/library:authimage
     deploy:
       replicas: 1
     ports:
@@ -22,7 +22,7 @@ services:
     
 
   book_service:
-    image: sajidshaikktm/lib:bookimage
+    image: sajidshaikktm/library:bookimage
     deploy:
       replicas: 1
     ports:
@@ -32,7 +32,7 @@ services:
     depends_on:
       - db
   borrow_service:
-    image: sajidshaikktm/lib:borrowimage
+    image: sajidshaikktm/library:borrowimage
     deploy:
       replicas: 1
     ports:
@@ -43,7 +43,7 @@ services:
       - db
 
   frontend:
-    image: sajidshaikktm/lib:frontendimage
+    image: sajidshaikktm/library:appimage
     deploy:
       replicas: 1
     ports:
